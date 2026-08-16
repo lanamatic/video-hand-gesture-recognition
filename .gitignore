@@ -231,4 +231,4 @@ env/
 *.swp
 *~
 
-data/
+raw_data/
