@@ -231,6 +231,14 @@ env/
 *.swp
 *~
 
+# ML model checkpoints (too large for git)
+*.pth
+*.pt
+*.ckpt
+
 raw_data/
 
 /data/
+
+# Keep results but not the large binaries inside
+results/*.pth
