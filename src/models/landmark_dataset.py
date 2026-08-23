@@ -37,7 +37,7 @@ def load_landmark_split(landmarks_dir, min_frames=4, min_detection_rate=0.0):
 def attach_video_names(meta, df):
     meta = meta.copy()
     meta['video'] = meta['index'].map(df['video'])
-    meta['subject'] = meta['video'].str.split('_').str[0]
+    meta['subject'] = meta['video'].str.split('_').str[:2].str.join('_')
     return meta
 
 # Split train/val BY SUBJECT -> returns (train_mask, val_mask).
