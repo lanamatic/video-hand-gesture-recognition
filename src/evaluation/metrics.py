@@ -169,9 +169,9 @@ def compare_models(all_results, save_dir="results/figures", show_plot=True):
     width = 0.25
     
     fig, ax = plt.subplots(figsize=(14, 6))
-    bars1 = ax.bar(x - width, accuracies, width, label='Accuracy', color="#7BC1FB")
-    bars2 = ax.bar(x, f1_weighted, width, label='F1 (weighted)', color="#90DF92")
-    bars3 = ax.bar(x + width, f1_macro, width, label='F1 (macro)', color="#FF9BFC")
+    bars1 = ax.bar(x - width, accuracies, width, label='Accuracy', color="#7BB4E3")
+    bars2 = ax.bar(x, f1_weighted, width, label='F1 (weighted)', color="#DFB290")
+    bars3 = ax.bar(x + width, f1_macro, width, label='F1 (macro)', color="#F8BAF6")
     
     ax.set_ylabel('Score', fontsize=12)
     ax.set_title('Model Comparison', fontsize=14)

@@ -1,0 +1,19 @@
+{
+  "model": "3DCNN_scratch",
+  "approach": "raw video clip (3D CNN, from scratch)",
+  "accuracy": 0.5059037238873751,
+  "f1_weighted": 0.4945585650417449,
+  "f1_macro": 0.49841393321443456,
+  "inference_ms": 9.902533749118447,
+  "parameters": 1199821,
+  "config": {
+    "architecture": "Conv3D x4 + FC head",
+    "batch_size": 8,
+    "num_epochs": 50,
+    "optimizer": "Adam",
+    "lr": 0.001,
+    "dropout": 0.5,
+    "n_frames": 16,
+    "resolution": 112
+  }
+}
