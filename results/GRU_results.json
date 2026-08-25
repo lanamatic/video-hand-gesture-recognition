@@ -1,0 +1,14 @@
+{
+  "model": "GRU",
+  "accuracy": 0.8483197093551317,
+  "f1_weighted": 0.8444259615197252,
+  "f1_macro": 0.7717719826482529,
+  "precision_weighted": 0.8572931735431756,
+  "recall_weighted": 0.8483197093551317,
+  "top3_accuracy": 0.9700272479564033,
+  "top5_accuracy": 0.9863760217983651,
+  "report": "              precision    recall  f1-score   support\n\n    Point-1f       0.94      0.98      0.96       265\n    Point-2f       0.99      0.92      0.96       264\n    Click-1f       0.62      0.29      0.39        52\n    Click-2f       0.57      0.44      0.50        52\n    Throw-up       0.94      0.63      0.76        52\n  Throw-down       0.85      0.87      0.86        52\n  Throw-left       1.00      1.00      1.00        52\n Throw-right       0.74      0.92      0.82        52\n  Open-twice       0.73      0.92      0.81        52\n DblClick-1f       0.52      0.83      0.64        52\n DblClick-2f       0.61      0.71      0.65        52\n     Zoom-in       0.80      0.85      0.82        52\n    Zoom-out       0.93      0.79      0.85        52\n\n    accuracy                           0.85      1101\n   macro avg       0.79      0.78      0.77      1101\nweighted avg       0.86      0.85      0.84      1101\n",
+  "inference_ms": 3.438678080037789,
+  "parameters": 206477,
+  "train_time_s": 515.9394290447235
+}
