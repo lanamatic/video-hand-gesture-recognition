@@ -1,5 +1,7 @@
 import os
 import time
+import joblib
+import json
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import GridSearchCV, StratifiedKFold
@@ -155,3 +157,41 @@ def random_forest(X_train, y_train):
     print(f"Best CV F1 (weighted): {search.best_score_:.4f}")
 
     return search
+
+# Recursively convert numpy types/arrays to plain Python types for JSON
+def _to_serializable(obj):
+
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+    if isinstance(obj, np.floating):
+        return float(obj)
+    if isinstance(obj, np.integer):
+        return int(obj)
+    if isinstance(obj, dict):
+        return {k: _to_serializable(v) for k, v in obj.items()}
+    if isinstance(obj, (list, tuple)):
+        return [_to_serializable(v) for v in obj]
+    return obj
+
+# Save a fitted estimator (joblib) and its evaluation results + best hyperparameter config (JSON)
+def save_model_and_results(model_name, estimator, results, best_params,
+                            save_dir="../results/classical_models"):
+
+    os.makedirs(save_dir, exist_ok=True)
+
+    model_path = os.path.join(save_dir, f"{model_name}.joblib")
+    joblib.dump(estimator, model_path)
+
+    results_with_config = dict(results)
+    results_with_config['config'] = {
+        'best_params': best_params,
+        'cv_folds': 5,
+        'scoring': 'f1_weighted',
+    }
+
+    results_path = os.path.join(save_dir, f"{model_name}_results.json")
+    with open(results_path, "w") as f:
+        json.dump(_to_serializable(results_with_config), f, indent=2)
+
+    print(f"Saved model to {model_path}")
+    print(f"Saved results to {results_path}")
