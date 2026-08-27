@@ -1,10 +1,10 @@
 {
   "model": "3DCNN_scratch",
   "approach": "raw video clip (3D CNN, from scratch)",
-  "accuracy": 0.5059037238873751,
-  "f1_weighted": 0.4945585650417449,
-  "f1_macro": 0.49841393321443456,
-  "inference_ms": 9.902533749118447,
+  "accuracy": 0.5277020890099909,
+  "f1_weighted": 0.4637660233325228,
+  "f1_macro": 0.5172658180447726,
+  "inference_ms": 9.803982152370736,
   "parameters": 1199821,
   "config": {
     "architecture": "Conv3D x4 + FC head",

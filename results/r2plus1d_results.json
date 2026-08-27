@@ -1,10 +1,10 @@
 {
   "model": "R2plus1D_18",
   "approach": "raw video clip (pretrained R(2+1)D-18, fine-tuned)",
-  "accuracy": 0.8764759309718437,
-  "f1_weighted": 0.8780082737250027,
-  "f1_macro": 0.8460652140255542,
-  "inference_ms": 130.4610767494887,
+  "accuracy": 0.9082652134423251,
+  "f1_weighted": 0.9090284987377666,
+  "f1_macro": 0.8698658300238541,
+  "inference_ms": 132.0267233089544,
   "parameters": 31306794,
   "config": {
     "architecture": "R(2+1)D-18 (Kinetics-400 pretrained)",
