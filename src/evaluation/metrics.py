@@ -152,6 +152,46 @@ def measure_inference_time(model_predict_fn, X_sample, n_runs=100):
         'fps': 1.0 / times.mean() if times.mean() > 0 else float('inf')
     }
 
+def measure_pipeline_time(stages, sample_input, n_runs=20, warmup=2):
+    """
+    Measure the latency of every stage of an inference pipeline, not just the
+    classifier. Stages run in order, each receiving the previous stage's output.
+    Returns:
+        dict with one {mean_ms, std_ms} entry per stage name, plus
+        'total_mean_ms' and 'total_std_ms' for the whole pipeline.
+    """
+    for _ in range(warmup):
+        value = sample_input
+        for _, fn in stages:
+            value = fn(value)
+
+    stage_times = {name: [] for name, _ in stages}
+    total_times = []
+
+    for _ in range(n_runs):
+        value = sample_input
+        run_total = 0.0
+
+        for name, fn in stages:
+            start = time.perf_counter()
+            value = fn(value)
+            elapsed = time.perf_counter() - start
+
+            stage_times[name].append(elapsed)
+            run_total += elapsed
+
+        total_times.append(run_total)
+
+    results = {}
+    for name, times in stage_times.items():
+        times = np.array(times) * 1000
+        results[name] = {'mean_ms': times.mean(), 'std_ms': times.std()}
+
+    total_times = np.array(total_times) * 1000
+    results['total_mean_ms'] = total_times.mean()
+    results['total_std_ms'] = total_times.std()
+
+    return results
 
 def compare_models(all_results, save_dir="results/figures", show_plot=True):
     """
