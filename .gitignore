@@ -242,3 +242,5 @@ raw_data/
 
 # Keep results but not the large binaries inside
 results/*.pth
+results/*.joblib
+results/*.npz

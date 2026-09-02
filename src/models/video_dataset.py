@@ -1,5 +1,5 @@
 """
-PyTorch Dataset for the pre-extracted video clips (notebooks/clip_extraction.ipynb).
+PyTorch Dataset for the pre-extracted video clips (notebooks/03_clip_extraction.ipynb).
 
 Clips on disk are (16, 112, 112, 3) uint8, range [0, 255]. This module turns
 them to shape (C, T, H, W) = (3, 16, 112, 112), the PyTorch video convention.

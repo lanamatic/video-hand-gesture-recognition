@@ -1,0 +1,17 @@
+{
+  "model": "BiLSTM_final",
+  "approach": "landmark sequence (RNN)",
+  "accuracy": 0.8773841961852861,
+  "f1_weighted": 0.8761391271120692,
+  "f1_macro": 0.8372242239710688,
+  "inference_ms": 1.8591888701485004,
+  "parameters": 674701,
+  "config": {
+    "architecture": "BiLSTM",
+    "hidden": 128,
+    "layers": 2,
+    "dropout": 0.3,
+    "T_fixed": 60,
+    "velocity_features": true
+  }
+}
