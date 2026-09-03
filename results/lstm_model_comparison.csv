@@ -1,5 +1,5 @@
 Model,Approach,Accuracy,F1 (weighted),F1 (macro),Inference (ms),Parameters,Train time (s)
-BiLSTM_final,Landmark seq,0.8774,0.8761,0.8372,2.72,674701,1722
-BiGRU,Landmark seq,0.8656,0.8645,0.8094,4.55,510349,874
-GRU,Landmark seq,0.8483,0.8444,0.7718,3.44,206477,516
-LSTM,Landmark seq,0.832,0.8225,0.7478,1.23,272269,1043
+BiGRU_final,Landmark seq,0.8883,0.8876,0.8438,3.81,2988941,64
+BiGRU,Landmark seq,0.8683,0.8634,0.8103,2.92,510349,32
+GRU,Landmark seq,0.842,0.8407,0.7691,1.88,206477,32
+LSTM,Landmark seq,0.8047,0.7987,0.7198,1.84,272269,22
