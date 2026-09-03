@@ -1,14 +1,14 @@
 {
   "model": "BiGRU",
-  "accuracy": 0.8655767484105359,
-  "f1_weighted": 0.8644871267699098,
-  "f1_macro": 0.8093889559415773,
-  "precision_weighted": 0.8676260010534319,
-  "recall_weighted": 0.8655767484105359,
-  "top3_accuracy": 0.9727520435967303,
-  "top5_accuracy": 0.9845594913714805,
-  "report": "              precision    recall  f1-score   support\n\n    Point-1f       0.94      0.98      0.96       265\n    Point-2f       0.98      0.91      0.94       264\n    Click-1f       0.67      0.71      0.69        52\n    Click-2f       0.58      0.60      0.59        52\n    Throw-up       0.87      0.75      0.80        52\n  Throw-down       0.86      0.94      0.90        52\n  Throw-left       0.98      1.00      0.99        52\n Throw-right       0.77      0.92      0.84        52\n  Open-twice       0.81      0.88      0.84        52\n DblClick-1f       0.69      0.69      0.69        52\n DblClick-2f       0.74      0.54      0.62        52\n     Zoom-in       0.77      0.88      0.82        52\n    Zoom-out       0.85      0.79      0.82        52\n\n    accuracy                           0.87      1101\n   macro avg       0.81      0.82      0.81      1101\nweighted avg       0.87      0.87      0.86      1101\n",
-  "inference_ms": 4.554791700102214,
+  "accuracy": 0.8683015440508629,
+  "f1_weighted": 0.8633989776055855,
+  "f1_macro": 0.810272600657295,
+  "precision_weighted": 0.8718187499141288,
+  "recall_weighted": 0.8683015440508629,
+  "top3_accuracy": 0.971843778383288,
+  "top5_accuracy": 0.9836512261580381,
+  "report": "              precision    recall  f1-score   support\n\n    Point-1f       0.90      0.98      0.94       265\n    Point-2f       0.98      0.94      0.96       264\n    Click-1f       0.65      0.75      0.70        52\n    Click-2f       0.60      0.77      0.67        52\n    Throw-up       0.91      0.81      0.86        52\n  Throw-down       0.94      0.94      0.94        52\n  Throw-left       1.00      1.00      1.00        52\n Throw-right       0.75      0.94      0.84        52\n  Open-twice       0.87      0.92      0.90        52\n DblClick-1f       0.78      0.48      0.60        52\n DblClick-2f       0.77      0.38      0.51        52\n     Zoom-in       0.79      0.85      0.81        52\n    Zoom-out       0.84      0.79      0.81        52\n\n    accuracy                           0.87      1101\n   macro avg       0.83      0.81      0.81      1101\nweighted avg       0.87      0.87      0.86      1101\n",
+  "inference_ms": 2.921685979999893,
   "parameters": 510349,
-  "train_time_s": 874.2961790561676
+  "train_time_s": 32.1179563999176
 }
