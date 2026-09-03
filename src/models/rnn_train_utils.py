@@ -47,7 +47,7 @@ def _run_epoch(model, loader, criterion, device, optimizer=None):
 #Train with Adam + ReduceLROnPlateau + early stopping.
 def train_model(model, train_loader, val_loader, class_weights=None,
                 epochs=100, lr=1e-3, weight_decay=1e-5, patience=10,
-                device=None, verbose=True):
+                device=None, verbose=True, callback=None):
     device = device or get_device()
     model.to(device)
 
@@ -83,6 +83,10 @@ def train_model(model, train_loader, val_loader, class_weights=None,
         if verbose and (epoch % 5 == 0 or epoch == 1):
             print(f"  epoch {epoch:3d}  train {tr_loss:.3f}/{tr_acc:.3f}   "
                   f"val {va_loss:.3f}/{va_acc:.3f}")
+
+        # optional hook: lets a hyperparameter search stop unpromising trials early
+        if callback is not None:
+            callback(epoch, va_loss, va_acc)
 
         if epochs_no_improve >= patience:
             if verbose:
