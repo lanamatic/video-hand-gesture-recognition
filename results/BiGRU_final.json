@@ -1,0 +1,19 @@
+{
+  "model": "BiGRU_final",
+  "approach": "landmark sequence (RNN)",
+  "accuracy": 0.888283378746594,
+  "f1_weighted": 0.8876182510169393,
+  "f1_macro": 0.8437585379798445,
+  "inference_ms": 3.8112108200039074,
+  "parameters": 2988941,
+  "config": {
+    "rnn_type": "gru",
+    "bidirectional": true,
+    "hidden_size": 256,
+    "num_layers": 3,
+    "dropout": 0.3,
+    "lr": 0.0009656520212777109,
+    "t_fixed": 120,
+    "use_velocity": true
+  }
+}
