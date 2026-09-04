@@ -36,14 +36,14 @@ from src.models.lstm_model import GestureRNN   # adjust import to teammate's fil
 from src.models.landmark_dataset import add_velocity
 
 # Config (must match the trained model)
-CKPT_PATH = "data/checkpoints/best_BiLSTM.pth"
+CKPT_PATH = "data/checkpoints/best_BiGRU.pth"
 SCALER_PATH = "data/checkpoints/scaler.npz"
 
-T_FIXED = 60           # config: T_fixed
-HIDDEN = 128           # config: hidden
-LAYERS = 2             # config: layers
+T_FIXED = 120          # config: t_fixed
+HIDDEN = 256           # config: hidden_size
+LAYERS = 3             # config: num_layers
 DROPOUT = 0.3          # config: dropout
-BIDIRECTIONAL = True   # BiLSTM
+BIDIRECTIONAL = True   # BiGRU
 USE_VELOCITY = True    # config: velocity_features = true -> 126 input features
 INPUT_SIZE = NUM_FEATURES * 2 if USE_VELOCITY else NUM_FEATURES   # 126
 
@@ -60,7 +60,7 @@ GESTURE_NAMES = [
 def load_model(device):
     model = GestureRNN(
         input_size=INPUT_SIZE, hidden_size=HIDDEN, num_layers=LAYERS,
-        num_classes=len(GESTURE_NAMES), rnn_type='lstm',
+        num_classes=len(GESTURE_NAMES), rnn_type='gru',      # ← 'gru'
         bidirectional=BIDIRECTIONAL, dropout=DROPOUT,
     ).to(device)
 
