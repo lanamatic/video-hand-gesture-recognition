@@ -7,6 +7,7 @@
   "top3_accuracy": 0.9881925522252498,
   "top5_accuracy": 0.9954586739327884,
   "best_lr": 0.0001,
+  "parameters": 31306794,
   "config": {
     "architecture": "R(2+1)D-18 pretrained",
     "batch_size": 16,

@@ -25,9 +25,9 @@ All ten models are scored with a shared evaluation module
 comparable. See `08_final_evaluation.ipynb` for the full joint comparison and conclusions.
 
 **Headline result:** R(2+1)D-18 (transfer learning from Kinetics-400) achieves the highest
-accuracy (0.909 weighted F1), but BiLSTM comes within 3 points of it (0.876) at 2% of the
-parameters and ~70x faster inference. Full breakdown, confusion matrices, and per-class analysis are in
-`08_final_evaluation.ipynb`.
+accuracy (0.941 weighted F1), about 5 points ahead of the best landmark model, BiGRU (0.888) -
+which gets there with roughly a tenth of the parameters (3.0M vs 31.3M). Full breakdown,
+confusion matrices, and per-class analysis are in `08_final_evaluation.ipynb`.
 
 ## Dataset
 
@@ -127,7 +127,7 @@ Two real-time webcam demo scripts are provided in `src/demo/`:
   velocity features → standardization → BiGRU → gesture prediction with temporal smoothing
 - **`realtime_demo_r2plus1d.py`** - runs the trained R(2+1)D-18 model instead. Webcam frames
   → rolling buffer of 16 raw frames → resize/normalize → R(2+1)D-18 → gesture prediction.
-  Noticeably higher latency than the BiLSTM demo since the model is much heavier.
+  Noticeably higher latency than the BiGRU demo since the model is much heavier.
 
 Both require the corresponding checkpoint (and, for the BiGRU demo, the feature scaler)
 downloaded from the Google Drive link below and placed under `data/checkpoints/`. Run with
