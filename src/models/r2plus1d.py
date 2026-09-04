@@ -1,9 +1,9 @@
 """
 R(2+1)D-18 pretrained on Kinetics-400, fine-tuned for the 13 gesture classes.
 
-Actually trained on Google Colab (see notebooks/07_colab_r2plus1d.ipynb) - a 31M
+Actually trained on Kaggle (see notebooks/07_2_kaggle_modelR(2+1)D.ipynb) - a 31M
 parameter video model is too slow to fine-tune on local MPS. This module holds
-the same architecture so the checkpoint trained on Colab can be loaded back
+the same architecture so the checkpoint trained on Kaggle can be loaded back
 in here for evaluation once it's downloaded.
 """
 

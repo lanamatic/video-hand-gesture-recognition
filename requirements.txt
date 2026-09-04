@@ -17,3 +17,5 @@ jupyter>=1.0
 ipykernel>=6.0
 
 pyyaml>=6.0
+
+optuna>=3.0  # hyperparameter search in 05_lstm_models.ipynb
