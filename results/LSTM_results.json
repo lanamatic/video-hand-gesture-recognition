@@ -1,0 +1,14 @@
+{
+  "model": "LSTM",
+  "accuracy": 0.8047229791099001,
+  "f1_weighted": 0.7987248934717446,
+  "f1_macro": 0.7198131804200223,
+  "precision_weighted": 0.812663761161421,
+  "recall_weighted": 0.8047229791099001,
+  "top3_accuracy": 0.9464123524069028,
+  "top5_accuracy": 0.9763851044504995,
+  "report": "              precision    recall  f1-score   support\n\n    Point-1f       0.91      0.96      0.93       265\n    Point-2f       0.97      0.87      0.92       264\n    Click-1f       0.45      0.87      0.59        52\n    Click-2f       0.41      0.40      0.41        52\n    Throw-up       1.00      0.69      0.82        52\n  Throw-down       0.94      0.87      0.90        52\n  Throw-left       1.00      0.94      0.97        52\n Throw-right       0.81      0.96      0.88        52\n  Open-twice       0.83      0.85      0.84        52\n DblClick-1f       0.30      0.06      0.10        52\n DblClick-2f       0.41      0.52      0.46        52\n     Zoom-in       0.80      0.77      0.78        52\n    Zoom-out       0.74      0.81      0.77        52\n\n    accuracy                           0.80      1101\n   macro avg       0.73      0.74      0.72      1101\nweighted avg       0.81      0.80      0.80      1101\n",
+  "inference_ms": 1.840482579982563,
+  "parameters": 272269,
+  "train_time_s": 21.682278156280518
+}
